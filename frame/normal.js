@@ -1,21 +1,21 @@
 var Resolver = require('y-resolver'),
 
     raf = global.requestAnimationFrame || global.webkitRequestAnimationFrame || global.mozRequestAnimationFrame,
-    rsvs = [];
+    resolver;
 
 function resolve(ts){
-  var rs = rsvs.slice(),
-      rsv;
+  var rsv = resolver;
   
-  rsvs = [];
-  while(rsv = rs.shift()) rsv.accept(ts);
+  resolver = null;
+  rsv.accept(ts);
 }
 
 module.exports = function(){
-  var resolver = new Resolver();
   
-  rsvs.push(resolver);
-  raf(resolve);
+  if(!resolver){
+    resolver = new Resolver();
+    raf(resolve);
+  }
   
   return resolver.yielded;
 };
