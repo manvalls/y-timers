@@ -1,13 +1,11 @@
 {
   "name": "y-timers",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Yielded returning timers",
   "main": "main.js",
   "dependencies": {
     "y-resolver": ""
   },
-  
-  
   "repository": {
     "type": "git",
     "url": "git://github.com/manvalls/y-timers.git"
