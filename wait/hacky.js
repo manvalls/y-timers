@@ -22,7 +22,7 @@ worker.onmessage = function(e){
 
 module.exports = function(t){
   var resolver = new Resolver(),
-      id = counter++;
+      id = counter = (counter + 1)%1e15;
   
   resolvers[id] = resolver;
   worker.postMessage([t,id]);
