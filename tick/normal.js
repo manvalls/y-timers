@@ -1,13 +1,12 @@
 var Resolver = require('y-resolver');
 
-function resolve(resolver){
-  resolver.accept();
+function resolve(resolver,v){
+  resolver.accept(v);
 }
 
-module.exports = function(t){
+module.exports = function(v){
   var resolver = new Resolver();
-  
-  setImmediate(resolve,resolver);
+
+  setImmediate(resolve,resolver,v);
   return resolver.yielded;
 };
-

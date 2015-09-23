@@ -1,26 +1,27 @@
 var Resolver = require('y-resolver'),
     ticker = new Image(),
     state = true,
-    rsvs = [];
+    rsvs = [],
+    values = [];
 
 ticker.onerror = function(){
   var rs = rsvs.slice(),
       rsv;
-  
+
   rsvs = [];
-  while(rsv = rs.shift()) rsv.accept();
+  while(rsv = rs.shift()) rsv.accept(values.shift());
 };
 
-module.exports = function(){
+module.exports = function(v){
   var resolver = new Resolver();
-  
+
   rsvs.push(resolver);
-  
+  values.push(v);
+
   if(state) ticker.src = 'data:,0';
   else ticker.src = 'data:,1';
-  
+
   state = !state;
-  
+
   return resolver.yielded;
 };
-
