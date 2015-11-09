@@ -4,7 +4,7 @@
   "description": "Yielded returning timers",
   "main": "main.js",
   "dependencies": {
-    "y-resolver": ""
+    "y-resolver": "^6.1.0"
   },
   "repository": {
     "type": "git",
