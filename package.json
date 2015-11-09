@@ -1,6 +1,6 @@
 {
   "name": "y-timers",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Yielded returning timers",
   "main": "main.js",
   "dependencies": {
