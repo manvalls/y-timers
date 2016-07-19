@@ -1,8 +1,8 @@
-var Resolver = require('y-resolver'),
-    ticker = new Image(),
+var ticker = new Image(),
     state = true,
     rsvs = [],
-    values = [];
+    values = [],
+    Resolver;
 
 ticker.onerror = function(){
   var rs = rsvs.slice(),
@@ -25,3 +25,5 @@ module.exports = function(v){
 
   return resolver.yielded;
 };
+
+Resolver = require('y-resolver');
