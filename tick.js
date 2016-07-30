@@ -5,4 +5,5 @@ module.exports = function(){
 };
 
 if(global.setImmediate) tick = require('./tick/normal.js');
-else tick = require('./tick/hacky.js');
+else if(global.Image) tick = require('./tick/hacky/image.js');
+else tick = require('./tick/hacky/zero-wait.js');
