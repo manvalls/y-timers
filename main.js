@@ -1,4 +1,4 @@
-exports.wait = require('./wait.js');
-exports.tick = require('./tick.js');
-exports.frame = require('./frame.js');
-exports.now = require('./now.js');
+exports.wait = require('./wait');
+exports.tick = require('./tick');
+exports.frame = require('./frame');
+exports.now = require('./now');
